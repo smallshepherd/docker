@@ -11,8 +11,8 @@ RUN yum install -y make gcc gcc-c++ autoconf glibc-headers openssl-devel readlin
 
 RUN useradd rails
 RUN passwd -f -u rails
-RUN su - rails
-RUN cd ~
+
+USER rails
 
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 RUN mkdir -p ~/.rbenv/plugins && git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
